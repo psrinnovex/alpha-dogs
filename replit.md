@@ -10,13 +10,26 @@ A luxury, premium marketing homepage for Alpha Dogs Boston, a professional dog g
 - **UI Components**: Radix UI / Shadcn components + fully custom components
 
 ## Design System
-### Color Palette
-- Ivory/Background: `#faf8f3`
-- Warm Beige: `#f5efe6`
-- Charcoal/Dark: `#2c1f0e`, `#1a1008`
-- Bronze/Gold Accent: `#a0783a`, `#c9944a`, `#d4a96a`
-- Body Text: `#3d2c1a`, `#6b5740`
-- Muted: `#b5a090`, `#9b8470`
+### Color Palette (Refined — all warm, zero cool tones)
+- Ivory Background: `#FAF7F1`
+- Warm Linen (alt sections): `#F0E5D5`
+- Cards/White: `#FFFFFF`
+- Deep Walnut (dark sections): `#241808`
+- Dark Overlay: `#1A0E06`, `#160E06`
+- Primary Bronze Accent: `#9E6B28`
+- Mid Bronze: `#B87A38`
+- Light Bronze / Champagne: `#D4A060`
+- Heading Text (light bg): `#1A1208`
+- Body Text: `#2E1E0E`, `#52402E`
+- Muted Text: `#7A6450`, `#A88C72`
+- Cream Text (dark bg): `#F8EED6`
+- Body on Dark: `#C8AE90`
+- Borders: `#DDD0BC`, `#E8D8C4`
+
+### Animation Palette Rule
+- ALL animations must stay within the warm bronze/ivory palette
+- NO hue-rotate in CSS animations (removed from reptile-iridescence to prevent teal/blue shift)
+- Canvas particles: `rgba(184,122,56,...)` — warm bronze only
 
 ### Typography
 - Display Headings: Cormorant Garamond (elegant, editorial)

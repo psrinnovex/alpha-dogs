@@ -135,7 +135,7 @@ export function AntigravityParticles({ count = 28 }: { count?: number }) {
   );
 }
 
-export function WindsurfWaves({ color = "#c9944a", opacity = 0.12, speed = 1 }: {
+export function WindsurfWaves({ color = "#B87A38", opacity = 0.12, speed = 1 }: {
   color?: string;
   opacity?: number;
   speed?: number;
@@ -222,11 +222,11 @@ export function ReptileScalePattern({ className = "" }: { className?: string }) 
       >
         <defs>
           <pattern id="reptile-scales" x="0" y="0" width="40" height="34.64" patternUnits="userSpaceOnUse">
-            <g fill="none" stroke="rgba(201,148,74,0.07)" strokeWidth="0.8">
+            <g fill="none" stroke="rgba(184,122,56,0.07)" strokeWidth="0.8">
               <path d="M20 0 L40 17.32 L20 34.64 L0 17.32 Z" />
               <path d="M0 0 L20 17.32 L0 34.64" />
               <path d="M40 0 L20 17.32 L40 34.64" />
-              <circle cx="20" cy="17.32" r="2" fill="rgba(201,148,74,0.04)" stroke="none" />
+              <circle cx="20" cy="17.32" r="2" fill="rgba(184,122,56,0.04)" stroke="none" />
             </g>
           </pattern>
           <radialGradient id="reptile-fade" cx="50%" cy="50%" r="50%">
@@ -248,14 +248,14 @@ export function SerpentineLine({ className = "" }: { className?: string }) {
         <path
           d="M0,60 C150,20 350,100 600,60 C850,20 1050,100 1200,60"
           fill="none"
-          stroke="rgba(201,148,74,0.25)"
+          stroke="rgba(184,122,56,0.25)"
           strokeWidth="1.5"
           className="serpentine-path"
         />
         <path
           d="M0,80 C200,40 400,120 600,80 C800,40 1000,120 1200,80"
           fill="none"
-          stroke="rgba(212,169,106,0.15)"
+          stroke="rgba(196,152,90,0.15)"
           strokeWidth="1"
           className="serpentine-path-2"
         />
@@ -269,7 +269,7 @@ export function MagneticOrb({ className = "" }: { className?: string }) {
     <div className={`absolute pointer-events-none ${className}`}>
       <div className="magnetic-orb w-80 h-80 rounded-full"
         style={{
-          background: "radial-gradient(circle, rgba(201,148,74,0.12) 0%, rgba(201,148,74,0.04) 50%, transparent 70%)",
+          background: "radial-gradient(circle, rgba(184,122,56,0.12) 0%, rgba(184,122,56,0.04) 50%, transparent 70%)",
           filter: "blur(30px)",
         }}
       />
@@ -291,7 +291,7 @@ export function FloatingDiamond({ size = 12, delay = 0, className = "" }: {
         <polygon
           points="6,0 12,6 6,12 0,6"
           fill="none"
-          stroke="rgba(201,148,74,0.35)"
+          stroke="rgba(184,122,56,0.35)"
           strokeWidth="0.8"
         />
       </svg>

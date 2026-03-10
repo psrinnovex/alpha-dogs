@@ -126,7 +126,7 @@ function Navbar() {
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-700 glass-nav ${
         scrolled
-          ? "bg-[#faf8f3]/94 border-b border-[#e8ddd0] luxury-shadow"
+          ? "bg-[#FAF7F1]/94 border-b border-[#DDD0BC] luxury-shadow"
           : "bg-transparent"
       }`}
     >
@@ -138,12 +138,12 @@ function Navbar() {
       <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
         <div className="flex items-center justify-between h-16 sm:h-20">
           <a href="#" className="flex items-center gap-2.5 group" data-testid="link-logo">
-            <div className="w-9 h-9 rounded-full bg-[#a0783a] flex items-center justify-center scale-pulse">
+            <div className="w-9 h-9 rounded-full bg-[#9E6B28] flex items-center justify-center scale-pulse">
               <Scissors className="w-4 h-4 text-white" />
             </div>
             <div>
-              <span className="font-display text-xl font-semibold text-[#2c1f0e] tracking-wide block leading-none">Alpha Dogs</span>
-              <span className="text-[10px] font-medium text-[#a0783a] tracking-[0.15em] uppercase block mt-0.5">Boston</span>
+              <span className="font-display text-xl font-semibold text-[#241808] tracking-wide block leading-none">Alpha Dogs</span>
+              <span className="text-[10px] font-medium text-[#9E6B28] tracking-[0.15em] uppercase block mt-0.5">Boston</span>
             </div>
           </a>
 
@@ -153,7 +153,7 @@ function Navbar() {
                 key={l.label}
                 href={l.href}
                 className={`text-sm font-medium tracking-wide transition-all duration-200 underline-wave relative ${
-                  scrolled ? "text-[#3d2c1a] hover:text-[#a0783a]" : "text-[#2c1f0e] hover:text-[#a0783a]"
+                  scrolled ? "text-[#2E1E0E] hover:text-[#9E6B28]" : "text-[#241808] hover:text-[#9E6B28]"
                 }`}
                 data-testid={`link-nav-${l.label.toLowerCase()}`}
               >
@@ -183,7 +183,7 @@ function Navbar() {
           </div>
 
           <button
-            className="md:hidden p-2 rounded-lg text-[#2c1f0e]"
+            className="md:hidden p-2 rounded-lg text-[#241808]"
             onClick={() => setMenuOpen(!menuOpen)}
             data-testid="button-mobile-menu"
           >
@@ -193,20 +193,20 @@ function Navbar() {
       </div>
 
       {menuOpen && (
-        <div className="md:hidden bg-[#faf8f3]/98 glass-nav border-t border-[#e8ddd0] mobile-menu-slide">
+        <div className="md:hidden bg-[#FAF7F1]/98 glass-nav border-t border-[#DDD0BC] mobile-menu-slide">
           <div className="px-5 py-6 space-y-4">
             {links.map((l) => (
               <a
                 key={l.label}
                 href={l.href}
-                className="block text-base font-medium text-[#3d2c1a] hover:text-[#a0783a] transition-colors py-1"
+                className="block text-base font-medium text-[#2E1E0E] hover:text-[#9E6B28] transition-colors py-1"
                 onClick={() => setMenuOpen(false)}
                 data-testid={`link-mobile-${l.label.toLowerCase()}`}
               >
                 {l.label}
               </a>
             ))}
-            <div className="pt-4 border-t border-[#e8ddd0] flex flex-col gap-3">
+            <div className="pt-4 border-t border-[#DDD0BC] flex flex-col gap-3">
               <a href={PHONE_HREF} className="cta-button-outline flex items-center justify-center gap-2 py-3 rounded-full text-sm font-medium" data-testid="button-call-mobile">
                 <Phone className="w-4 h-4" />{PHONE}
               </a>
@@ -235,13 +235,13 @@ function HeroSection() {
             loading="eager"
           />
         </div>
-        <div className="absolute inset-0 bg-gradient-to-r from-[#1c160e]/90 via-[#1c160e]/60 to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#1c160e]/55 via-transparent to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#1A0E06]/90 via-[#1A0E06]/60 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#1A0E06]/55 via-transparent to-transparent" />
       </div>
 
       <AntigravityParticles count={32} />
 
-      <WindsurfWaves color="#c9944a" opacity={0.10} speed={0.6} />
+      <WindsurfWaves color="#B87A38" opacity={0.10} speed={0.6} />
 
       <ReptileScalePattern />
 
@@ -257,7 +257,7 @@ function HeroSection() {
       <div
         className="absolute top-24 right-1/4 w-32 h-32 rounded-full opacity-5"
         style={{
-          background: "radial-gradient(circle, #d4a96a, transparent)",
+          background: "radial-gradient(circle, #D4A060, transparent)",
           animation: "morphing-blob 10s ease-in-out infinite",
         }}
       />
@@ -265,11 +265,11 @@ function HeroSection() {
       <div className="relative z-10 max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 py-28 lg:py-36 w-full">
         <div className="max-w-2xl">
           <div className="flex items-center gap-2.5 mb-6 hero-text-rise" style={{ animationDelay: "0.1s" }}>
-            <div className="h-px w-8 bg-[#c9944a] border-trace" />
-            <span className="text-[#c9944a] text-xs font-semibold tracking-[0.2em] uppercase">Boston's Premier Dog Grooming</span>
+            <div className="h-px w-8 bg-[#B87A38] border-trace" />
+            <span className="text-[#B87A38] text-xs font-semibold tracking-[0.2em] uppercase">Boston's Premier Dog Grooming</span>
           </div>
 
-          <h1 className="font-display text-5xl sm:text-6xl lg:text-7xl font-semibold text-[#fdf8f0] leading-[1.08] mb-6">
+          <h1 className="font-display text-5xl sm:text-6xl lg:text-7xl font-semibold text-[#F8EED6] leading-[1.08] mb-6">
             <span className="hero-text-rise block" style={{ animationDelay: "0.2s" }}>Every Dog</span>
             <span className="hero-text-rise block" style={{ animationDelay: "0.35s" }}>Deserves{" "}
               <em className="text-shimmer-gold italic">Exceptional</em>
@@ -277,7 +277,7 @@ function HeroSection() {
             <span className="hero-text-rise block" style={{ animationDelay: "0.5s" }}>Care</span>
           </h1>
 
-          <p className="text-[#d4c8bc] text-lg sm:text-xl leading-relaxed mb-10 hero-text-rise" style={{ animationDelay: "0.65s" }}>
+          <p className="text-[#C8AE90] text-lg sm:text-xl leading-relaxed mb-10 hero-text-rise" style={{ animationDelay: "0.65s" }}>
             Professional grooming with a personal touch. Boston's most trusted boutique dog grooming studio, where your pet's comfort and beauty come first.
           </p>
 
@@ -309,7 +309,7 @@ function HeroSection() {
                 className="hero-badge-pop flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-white/10 backdrop-blur-sm text-white text-xs font-medium border border-white/20"
                 style={{ animationDelay: `${0.9 + i * 0.12}s` }}
               >
-                <CheckCircle2 className="w-3 h-3 text-[#c9944a]" />
+                <CheckCircle2 className="w-3 h-3 text-[#B87A38]" />
                 {tag}
               </span>
             ))}
@@ -347,9 +347,9 @@ function TrustBadges() {
   ];
 
   return (
-    <section id="trust" className="relative bg-[#2c1f0e] py-16 overflow-hidden">
+    <section id="trust" className="relative bg-[#241808] py-16 overflow-hidden">
       <ReptileScalePattern />
-      <WindsurfWaves color="#c9944a" opacity={0.06} speed={0.4} />
+      <WindsurfWaves color="#B87A38" opacity={0.06} speed={0.4} />
 
       <div className="absolute inset-0 pointer-events-none">
         <div
@@ -371,13 +371,13 @@ function TrustBadges() {
               }}
               data-testid={`stat-${s.label.toLowerCase().replace(/\s+/g, "-")}`}
             >
-              <div className="flex justify-center mb-3 text-[#c9944a] scale-pulse" style={{ animationDuration: `${3 + i * 0.4}s` }}>
+              <div className="flex justify-center mb-3 text-[#B87A38] scale-pulse" style={{ animationDuration: `${3 + i * 0.4}s` }}>
                 {s.icon}
               </div>
-              <div className="font-display text-5xl sm:text-6xl font-bold text-[#fdf8f0] mb-1">
+              <div className="font-display text-5xl sm:text-6xl font-bold text-[#F8EED6] mb-1">
                 {counters[i].count}{s.suffix}
               </div>
-              <div className="text-[#b5a090] text-sm font-medium tracking-wide">{s.label}</div>
+              <div className="text-[#A88C72] text-sm font-medium tracking-wide">{s.label}</div>
             </div>
           ))}
         </div>
@@ -392,13 +392,13 @@ function TrustBadges() {
           ].map((b, i) => (
             <div
               key={b.text}
-              className="flex items-center gap-2.5 text-[#c9944a] stagger-item"
+              className="flex items-center gap-2.5 text-[#B87A38] stagger-item"
               style={{ animationDelay: `${0.5 + i * 0.1}s` }}
             >
               <span className="antigravity-float" style={{ animationDuration: `${5 + i * 0.6}s`, animationDelay: `${i * 0.4}s` }}>
                 {b.icon}
               </span>
-              <span className="text-[#d4c8bc] text-sm font-medium">{b.text}</span>
+              <span className="text-[#C8AE90] text-sm font-medium">{b.text}</span>
             </div>
           ))}
         </div>
@@ -418,8 +418,8 @@ const services = [
 
 function ServicesSection() {
   return (
-    <section id="services" className="relative py-20 sm:py-28 bg-[#faf8f3] overflow-hidden">
-      <WindsurfWaves color="#a0783a" opacity={0.055} speed={0.5} />
+    <section id="services" className="relative py-20 sm:py-28 bg-[#FAF7F1] overflow-hidden">
+      <WindsurfWaves color="#9E6B28" opacity={0.055} speed={0.5} />
       <WindTrail className="inset-0" />
 
       <div className="absolute bottom-0 left-0 right-0 h-48 pointer-events-none" style={{
@@ -430,14 +430,14 @@ function ServicesSection() {
         <div className="text-center mb-16 reveal">
           <div className="flex items-center justify-center gap-3 mb-4">
             <div className="h-px w-10 aurora-bg rounded-full" style={{ height: "2px" }} />
-            <span className="text-[#a0783a] text-xs font-semibold tracking-[0.2em] uppercase">Our Services</span>
+            <span className="text-[#9E6B28] text-xs font-semibold tracking-[0.2em] uppercase">Our Services</span>
             <div className="h-px w-10 aurora-bg rounded-full" style={{ height: "2px" }} />
           </div>
-          <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl font-semibold text-[#2c1f0e] mb-5 leading-tight depth-zoom">
+          <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl font-semibold text-[#241808] mb-5 leading-tight depth-zoom">
             Premium Grooming,{" "}
             <em style={{ fontStyle: "italic" }} className="text-shimmer-gold">Artfully Done</em>
           </h2>
-          <p className="text-[#6b5740] text-lg max-w-2xl mx-auto leading-relaxed">
+          <p className="text-[#52402E] text-lg max-w-2xl mx-auto leading-relaxed">
             Each session is tailored to your dog's unique breed, coat, and personality. We never rush — every dog gets the time and attention they deserve.
           </p>
         </div>
@@ -446,7 +446,7 @@ function ServicesSection() {
           {services.map((s, i) => (
             <div
               key={s.name}
-              className={`reveal card-3d group bg-white rounded-2xl p-7 border border-[#e8ddd0] relative overflow-hidden cursor-default`}
+              className={`reveal card-3d group bg-white rounded-2xl p-7 border border-[#DDD0BC] relative overflow-hidden cursor-default`}
               style={{ transitionDelay: `${i * 0.08}s` }}
               data-testid={`card-service-${i}`}
             >
@@ -457,24 +457,24 @@ function ServicesSection() {
               <div className="absolute top-0 left-0 right-0 h-1 aurora-bg transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-700" />
 
               {s.badge && (
-                <span className="absolute top-5 right-5 text-[10px] font-bold tracking-widest uppercase px-3 py-1 rounded-full bg-[#f5efe6] text-[#a0783a] border border-[#e8ddd0]">
+                <span className="absolute top-5 right-5 text-[10px] font-bold tracking-widest uppercase px-3 py-1 rounded-full bg-[#F0E5D5] text-[#9E6B28] border border-[#DDD0BC]">
                   {s.badge}
                 </span>
               )}
 
-              <div className="w-12 h-12 rounded-xl bg-[#f5efe6] flex items-center justify-center text-[#a0783a] mb-5 group-hover:bg-[#a0783a] group-hover:text-white transition-all duration-300 group-hover:scale-pulse relative z-10">
+              <div className="w-12 h-12 rounded-xl bg-[#F0E5D5] flex items-center justify-center text-[#9E6B28] mb-5 group-hover:bg-[#9E6B28] group-hover:text-white transition-all duration-300 group-hover:scale-pulse relative z-10">
                 {s.icon}
               </div>
 
-              <h3 className="font-display text-2xl font-semibold text-[#2c1f0e] mb-3 relative z-10">{s.name}</h3>
-              <p className="text-[#6b5740] text-sm leading-relaxed mb-5 relative z-10">{s.desc}</p>
+              <h3 className="font-display text-2xl font-semibold text-[#241808] mb-3 relative z-10">{s.name}</h3>
+              <p className="text-[#52402E] text-sm leading-relaxed mb-5 relative z-10">{s.desc}</p>
 
-              <div className="flex items-center justify-between pt-4 border-t border-[#f0e8de] relative z-10">
-                <div className="flex items-center gap-1.5 text-[#a0783a] text-xs font-medium">
+              <div className="flex items-center justify-between pt-4 border-t border-[#E8D8C4] relative z-10">
+                <div className="flex items-center gap-1.5 text-[#9E6B28] text-xs font-medium">
                   <Clock className="w-3.5 h-3.5 antigravity-float" style={{ animationDuration: "4s", animationDelay: `${i * 0.3}s` }} />
                   {s.duration}
                 </div>
-                <a href={BOOKING_URL} className="flex items-center gap-1 text-[#a0783a] text-xs font-semibold hover:gap-2.5 transition-all duration-300" data-testid={`button-book-service-${i}`}>
+                <a href={BOOKING_URL} className="flex items-center gap-1 text-[#9E6B28] text-xs font-semibold hover:gap-2.5 transition-all duration-300" data-testid={`button-book-service-${i}`}>
                   Book Now <ArrowRight className="w-3.5 h-3.5" />
                 </a>
               </div>
@@ -486,7 +486,7 @@ function ServicesSection() {
           <a href={BOOKING_URL} className="cta-button-primary inline-flex items-center gap-2.5 px-8 py-4 rounded-full text-base font-semibold neon-bronze" data-testid="button-book-services">
             <Calendar className="w-5 h-5" />Book Your Dog's Appointment
           </a>
-          <p className="text-[#9b8470] text-sm mt-3">Or call <a href={PHONE_HREF} className="text-[#a0783a] font-medium hover:underline" data-testid="link-phone-services">{PHONE}</a></p>
+          <p className="text-[#7A6452] text-sm mt-3">Or call <a href={PHONE_HREF} className="text-[#9E6B28] font-medium hover:underline" data-testid="link-phone-services">{PHONE}</a></p>
         </div>
       </div>
     </section>
@@ -504,9 +504,9 @@ function WhyChooseUs() {
   ];
 
   return (
-    <section className="relative py-20 sm:py-28 overflow-hidden" style={{ background: "linear-gradient(135deg, #f5efe6 0%, #ede4d8 50%, #faf8f3 100%)" }}>
+    <section className="relative py-20 sm:py-28 overflow-hidden" style={{ background: "linear-gradient(135deg, #F0E5D5 0%, #E0D0BE 50%, #FAF7F1 100%)" }}>
       <ReptileScalePattern />
-      <WindsurfWaves color="#b8895a" opacity={0.07} speed={0.35} />
+      <WindsurfWaves color="#A87840" opacity={0.07} speed={0.35} />
 
       <div className="absolute -top-20 -left-20 w-80 h-80 rounded-full radiance-orb opacity-30 pointer-events-none"
         style={{ background: "radial-gradient(circle, rgba(201,148,74,0.2) 0%, transparent 70%)" }} />
@@ -516,14 +516,14 @@ function WhyChooseUs() {
           <div className="reveal-left">
             <div className="flex items-center gap-3 mb-5">
               <div className="h-px w-10 aurora-bg rounded-full" style={{ height: "2px" }} />
-              <span className="text-[#a0783a] text-xs font-semibold tracking-[0.2em] uppercase">Why Alpha Dogs Boston</span>
+              <span className="text-[#9E6B28] text-xs font-semibold tracking-[0.2em] uppercase">Why Alpha Dogs Boston</span>
             </div>
-            <h2 className="font-display text-4xl sm:text-5xl font-semibold text-[#2c1f0e] leading-tight mb-6 depth-zoom">
+            <h2 className="font-display text-4xl sm:text-5xl font-semibold text-[#241808] leading-tight mb-6 depth-zoom">
               Boston Dog Parents{" "}
               <em style={{ fontStyle: "italic" }} className="text-shimmer-gold">Trust Us</em>{" "}
               With Their Best Friend
             </h2>
-            <p className="text-[#6b5740] text-lg leading-relaxed mb-8">
+            <p className="text-[#52402E] text-lg leading-relaxed mb-8">
               We've built our reputation one happy dog at a time. Clients return not just because their dogs look great — but because they can see how much their pet enjoyed it.
             </p>
             <a href={BOOKING_URL} className="cta-button-primary inline-flex items-center gap-2.5 px-8 py-4 rounded-full text-base font-semibold neon-bronze" data-testid="button-book-why">
@@ -535,20 +535,20 @@ function WhyChooseUs() {
             {reasons.map((r, i) => (
               <div
                 key={r.title}
-                className="reveal card-3d bg-white p-5 rounded-xl border border-[#e8ddd0] luxury-shadow group overflow-hidden relative"
+                className="reveal card-3d bg-white p-5 rounded-xl border border-[#DDD0BC] luxury-shadow group overflow-hidden relative"
                 style={{ transitionDelay: `${i * 0.1}s` }}
                 data-testid={`card-reason-${i}`}
               >
                 <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
                   <ReptileScalePattern />
                 </div>
-                <div className="w-10 h-10 rounded-lg bg-[#f5efe6] flex items-center justify-center text-[#a0783a] mb-3.5 group-hover:scale-110 transition-transform duration-300 relative z-10">
+                <div className="w-10 h-10 rounded-lg bg-[#F0E5D5] flex items-center justify-center text-[#9E6B28] mb-3.5 group-hover:scale-110 transition-transform duration-300 relative z-10">
                   <span className="group-hover:antigravity-float">
                     {r.icon}
                   </span>
                 </div>
-                <h3 className="font-semibold text-[#2c1f0e] mb-2 text-sm relative z-10">{r.title}</h3>
-                <p className="text-[#6b5740] text-xs leading-relaxed relative z-10">{r.desc}</p>
+                <h3 className="font-semibold text-[#241808] mb-2 text-sm relative z-10">{r.title}</h3>
+                <p className="text-[#52402E] text-xs leading-relaxed relative z-10">{r.desc}</p>
               </div>
             ))}
           </div>
@@ -569,10 +569,10 @@ function GallerySection() {
   ];
 
   return (
-    <section id="gallery" className="relative py-20 sm:py-28 bg-[#2c1f0e] overflow-hidden">
+    <section id="gallery" className="relative py-20 sm:py-28 bg-[#241808] overflow-hidden">
       <ReptileScalePattern />
       <AntigravityParticles count={18} />
-      <WindsurfWaves color="#c9944a" opacity={0.08} speed={0.55} />
+      <WindsurfWaves color="#B87A38" opacity={0.08} speed={0.55} />
 
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] radiance-orb opacity-15"
@@ -583,14 +583,14 @@ function GallerySection() {
         <div className="text-center mb-14 reveal">
           <div className="flex items-center justify-center gap-3 mb-4">
             <div className="h-px w-10 aurora-bg rounded-full" style={{ height: "2px" }} />
-            <span className="text-[#c9944a] text-xs font-semibold tracking-[0.2em] uppercase">Happy Dogs Gallery</span>
+            <span className="text-[#B87A38] text-xs font-semibold tracking-[0.2em] uppercase">Happy Dogs Gallery</span>
             <div className="h-px w-10 aurora-bg rounded-full" style={{ height: "2px" }} />
           </div>
-          <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl font-semibold text-[#fdf8f0] mb-4 leading-tight depth-zoom">
+          <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl font-semibold text-[#F8EED6] mb-4 leading-tight depth-zoom">
             See the{" "}
             <em style={{ fontStyle: "italic" }} className="text-shimmer-gold">Transformation</em>
           </h2>
-          <p className="text-[#b5a090] text-lg max-w-xl mx-auto">
+          <p className="text-[#A88C72] text-lg max-w-xl mx-auto">
             Every dog leaves looking and feeling their absolute best. These are our happy clients.
           </p>
         </div>
@@ -616,12 +616,12 @@ function GallerySection() {
               <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
                 <ReptileScalePattern />
               </div>
-              <div className="absolute inset-0 bg-gradient-to-t from-[#1c160e]/75 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all duration-400 flex items-end p-4">
+              <div className="absolute inset-0 bg-gradient-to-t from-[#1A0E06]/75 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all duration-400 flex items-end p-4">
                 <div className="translate-y-4 group-hover:translate-y-0 transition-transform duration-400">
                   <span className="text-white text-sm font-medium block">{img.alt}</span>
                   <div className="flex gap-0.5 mt-1">
                     {[...Array(5)].map((_, j) => (
-                      <Star key={j} className="w-3 h-3 fill-[#c9944a] text-[#c9944a]" />
+                      <Star key={j} className="w-3 h-3 fill-[#B87A38] text-[#B87A38]" />
                     ))}
                   </div>
                 </div>
@@ -631,12 +631,12 @@ function GallerySection() {
         </div>
 
         <div className="text-center mt-10 reveal">
-          <p className="text-[#b5a090] text-sm mb-4">Follow our happy dogs on Instagram</p>
+          <p className="text-[#A88C72] text-sm mb-4">Follow our happy dogs on Instagram</p>
           <a
             href="https://instagram.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 text-[#c9944a] text-sm font-semibold hover:text-[#d4a96a] transition-colors border border-[#c9944a]/40 hover:border-[#c9944a] px-6 py-2.5 rounded-full windsurf-blow"
+            className="inline-flex items-center gap-2 text-[#B87A38] text-sm font-semibold hover:text-[#D4A060] transition-colors border border-[#B87A38]/40 hover:border-[#B87A38] px-6 py-2.5 rounded-full windsurf-blow"
             style={{ animationDuration: "6s" }}
             data-testid="link-instagram"
           >
@@ -660,34 +660,34 @@ const testimonials = [
 
 function TestimonialsSection() {
   return (
-    <section id="testimonials" className="relative py-20 sm:py-28 bg-[#faf8f3] overflow-hidden">
-      <WindsurfWaves color="#a0783a" opacity={0.05} speed={0.45} />
+    <section id="testimonials" className="relative py-20 sm:py-28 bg-[#FAF7F1] overflow-hidden">
+      <WindsurfWaves color="#9E6B28" opacity={0.05} speed={0.45} />
       <WindTrail className="inset-0" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
         <div className="text-center mb-14 reveal">
           <div className="flex items-center justify-center gap-3 mb-4">
             <div className="h-px w-10 aurora-bg rounded-full" style={{ height: "2px" }} />
-            <span className="text-[#a0783a] text-xs font-semibold tracking-[0.2em] uppercase">Client Stories</span>
+            <span className="text-[#9E6B28] text-xs font-semibold tracking-[0.2em] uppercase">Client Stories</span>
             <div className="h-px w-10 aurora-bg rounded-full" style={{ height: "2px" }} />
           </div>
-          <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl font-semibold text-[#2c1f0e] mb-4 leading-tight depth-zoom">
+          <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl font-semibold text-[#241808] mb-4 leading-tight depth-zoom">
             What Boston Dog Parents{" "}
             <em style={{ fontStyle: "italic" }} className="text-shimmer-gold">Are Saying</em>
           </h2>
           <div className="flex items-center justify-center gap-1 mb-2">
             {[1, 2, 3, 4, 5].map((i) => (
-              <Star key={i} className="w-5 h-5 fill-[#c9944a] text-[#c9944a] scale-pulse" style={{ animationDelay: `${i * 0.15}s` }} />
+              <Star key={i} className="w-5 h-5 fill-[#B87A38] text-[#B87A38] scale-pulse" style={{ animationDelay: `${i * 0.15}s` }} />
             ))}
           </div>
-          <p className="text-[#9b8470] text-sm font-medium">4.9 / 5.0 — 200+ verified reviews</p>
+          <p className="text-[#7A6452] text-sm font-medium">4.9 / 5.0 — 200+ verified reviews</p>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {testimonials.map((t, i) => (
             <div
               key={t.name}
-              className="testimonial-card reveal card-3d bg-white p-6 rounded-2xl border border-[#e8ddd0] luxury-shadow group relative overflow-hidden"
+              className="testimonial-card reveal card-3d bg-white p-6 rounded-2xl border border-[#DDD0BC] luxury-shadow group relative overflow-hidden"
               style={{ transitionDelay: `${i * 0.09}s` }}
               data-testid={`card-testimonial-${i}`}
             >
@@ -696,20 +696,20 @@ function TestimonialsSection() {
               </div>
               <div className="relative z-10">
                 <div className="flex items-start gap-1 mb-4">
-                  <Quote className="w-8 h-8 text-[#e8ddd0] fill-[#e8ddd0] flex-shrink-0 -mt-1 scale-pulse" style={{ animationDuration: "5s" }} />
+                  <Quote className="w-8 h-8 text-[#DDD0BC] fill-[#DDD0BC] flex-shrink-0 -mt-1 scale-pulse" style={{ animationDuration: "5s" }} />
                 </div>
-                <p className="text-[#3d2c1a] text-sm leading-relaxed mb-5 italic">"{t.text}"</p>
+                <p className="text-[#2E1E0E] text-sm leading-relaxed mb-5 italic">"{t.text}"</p>
                 <div className="flex items-center gap-1 mb-4">
                   {[...Array(t.rating)].map((_, j) => (
-                    <Star key={j} className="w-3.5 h-3.5 fill-[#c9944a] text-[#c9944a]" />
+                    <Star key={j} className="w-3.5 h-3.5 fill-[#B87A38] text-[#B87A38]" />
                   ))}
                 </div>
-                <div className="flex items-center justify-between pt-4 border-t border-[#f0e8de]">
+                <div className="flex items-center justify-between pt-4 border-t border-[#E8D8C4]">
                   <div>
-                    <p className="font-semibold text-[#2c1f0e] text-sm">{t.name}</p>
-                    <p className="text-[#9b8470] text-xs">{t.dog}</p>
+                    <p className="font-semibold text-[#241808] text-sm">{t.name}</p>
+                    <p className="text-[#7A6452] text-xs">{t.dog}</p>
                   </div>
-                  <span className="text-xs text-[#c9944a] font-medium bg-[#f5efe6] px-2.5 py-1 rounded-full">{t.neighborhood}</span>
+                  <span className="text-xs text-[#B87A38] font-medium bg-[#F0E5D5] px-2.5 py-1 rounded-full">{t.neighborhood}</span>
                 </div>
               </div>
             </div>
@@ -729,10 +729,10 @@ function CTABand() {
         className="absolute inset-0 parallax-section"
         style={{ backgroundImage: "url('/images/dog-gallery-2.png')", backgroundSize: "cover", backgroundPosition: "center" }}
       />
-      <div className="absolute inset-0 bg-[#1c160e]/82" />
+      <div className="absolute inset-0 bg-[#1A0E06]/82" />
       <ReptileScalePattern />
       <AntigravityParticles count={20} />
-      <WindsurfWaves color="#c9944a" opacity={0.12} speed={0.7} />
+      <WindsurfWaves color="#B87A38" opacity={0.12} speed={0.7} />
 
       <SerpentineLine className="absolute top-0 left-0 right-0 h-12 z-10" />
 
@@ -744,14 +744,14 @@ function CTABand() {
       <div className="relative z-10 max-w-4xl mx-auto px-5 sm:px-8 text-center reveal">
         <div className="flex items-center justify-center gap-3 mb-5">
           <div className="h-px w-10 aurora-bg rounded-full" style={{ height: "2px" }} />
-          <span className="text-[#c9944a] text-xs font-semibold tracking-[0.2em] uppercase">Ready to Book?</span>
+          <span className="text-[#B87A38] text-xs font-semibold tracking-[0.2em] uppercase">Ready to Book?</span>
           <div className="h-px w-10 aurora-bg rounded-full" style={{ height: "2px" }} />
         </div>
-        <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl font-semibold text-[#fdf8f0] mb-5 leading-tight depth-zoom">
+        <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl font-semibold text-[#F8EED6] mb-5 leading-tight depth-zoom">
           Treat Your Dog to{" "}
           <em style={{ fontStyle: "italic" }} className="text-shimmer-gold">Something Special</em>
         </h2>
-        <p className="text-[#c8b8a8] text-lg mb-10 max-w-xl mx-auto leading-relaxed">
+        <p className="text-[#C0A880] text-lg mb-10 max-w-xl mx-auto leading-relaxed">
           Boston's most-loved dog grooming studio is ready to welcome your pet. Appointments fill quickly — secure yours today.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -783,9 +783,9 @@ function CTABand() {
 
 function AboutSection() {
   return (
-    <section id="about" className="relative py-20 sm:py-28 overflow-hidden" style={{ background: "linear-gradient(160deg, #f5efe6 0%, #ede4d8 60%, #f0e8dc 100%)" }}>
+    <section id="about" className="relative py-20 sm:py-28 overflow-hidden" style={{ background: "linear-gradient(160deg, #F0E5D5 0%, #E0D0BE 60%, #E8D8C4 100%)" }}>
       <ReptileScalePattern />
-      <WindsurfWaves color="#b8895a" opacity={0.065} speed={0.4} />
+      <WindsurfWaves color="#A87840" opacity={0.065} speed={0.4} />
 
       <MagneticOrb className="-left-20 bottom-10 opacity-40" />
 
@@ -805,9 +805,9 @@ function AboutSection() {
                 </div>
               </div>
 
-              <div className="absolute -bottom-5 -right-5 bg-[#2c1f0e] text-white rounded-xl p-4 luxury-shadow-lg levitate">
+              <div className="absolute -bottom-5 -right-5 bg-[#241808] text-white rounded-xl p-4 luxury-shadow-lg levitate">
                 <div className="font-display text-2xl font-bold text-shimmer-gold">8+ Years</div>
-                <div className="text-[#b5a090] text-xs font-medium">Serving Boston</div>
+                <div className="text-[#A88C72] text-xs font-medium">Serving Boston</div>
               </div>
 
               <FloatingDiamond size={16} delay={0.5} className="top-4 left-4" />
@@ -818,13 +818,13 @@ function AboutSection() {
           <div className="order-1 lg:order-2 reveal-left">
             <div className="flex items-center gap-3 mb-5">
               <div className="h-px w-10 aurora-bg rounded-full" style={{ height: "2px" }} />
-              <span className="text-[#a0783a] text-xs font-semibold tracking-[0.2em] uppercase">Our Story</span>
+              <span className="text-[#9E6B28] text-xs font-semibold tracking-[0.2em] uppercase">Our Story</span>
             </div>
-            <h2 className="font-display text-4xl sm:text-5xl font-semibold text-[#2c1f0e] mb-6 leading-tight depth-zoom">
+            <h2 className="font-display text-4xl sm:text-5xl font-semibold text-[#241808] mb-6 leading-tight depth-zoom">
               Grooming Born from{" "}
               <em style={{ fontStyle: "italic" }} className="text-shimmer-gold">Passion & Care</em>
             </h2>
-            <div className="space-y-4 text-[#6b5740] leading-relaxed">
+            <div className="space-y-4 text-[#52402E] leading-relaxed">
               <p>Alpha Dogs Boston was founded with one simple belief: every dog deserves to be treated like the most important guest in the room. We opened our Back Bay studio over eight years ago with that philosophy guiding every decision.</p>
               <p>Our team of certified groomers brings genuine love, expert training, and infinite patience to every session. Whether your dog is a first-time visitor or a regular, they'll always be greeted by name, handled with care, and returned to you looking — and feeling — their very best.</p>
               <p>We groom all breeds and sizes, and we're proud to be the go-to studio for Boston's most discerning dog parents. Big or small, anxious or easygoing, every dog gets our full attention.</p>
@@ -858,29 +858,29 @@ const faqs = [
 function FAQSection() {
   const [open, setOpen] = useState<number | null>(null);
   return (
-    <section id="faq" className="relative py-20 sm:py-28 bg-[#faf8f3] overflow-hidden">
-      <WindsurfWaves color="#a0783a" opacity={0.05} speed={0.4} />
+    <section id="faq" className="relative py-20 sm:py-28 bg-[#FAF7F1] overflow-hidden">
+      <WindsurfWaves color="#9E6B28" opacity={0.05} speed={0.4} />
       <WindTrail className="inset-0" />
 
       <div className="relative z-10 max-w-3xl mx-auto px-5 sm:px-8 lg:px-12">
         <div className="text-center mb-14 reveal">
           <div className="flex items-center justify-center gap-3 mb-4">
             <div className="h-px w-10 aurora-bg rounded-full" style={{ height: "2px" }} />
-            <span className="text-[#a0783a] text-xs font-semibold tracking-[0.2em] uppercase">Common Questions</span>
+            <span className="text-[#9E6B28] text-xs font-semibold tracking-[0.2em] uppercase">Common Questions</span>
             <div className="h-px w-10 aurora-bg rounded-full" style={{ height: "2px" }} />
           </div>
-          <h2 className="font-display text-4xl sm:text-5xl font-semibold text-[#2c1f0e] mb-4 leading-tight depth-zoom">
+          <h2 className="font-display text-4xl sm:text-5xl font-semibold text-[#241808] mb-4 leading-tight depth-zoom">
             Frequently Asked{" "}
             <em style={{ fontStyle: "italic" }} className="text-shimmer-gold">Questions</em>
           </h2>
-          <p className="text-[#6b5740] text-lg">Everything you need to know before your dog's first visit.</p>
+          <p className="text-[#52402E] text-lg">Everything you need to know before your dog's first visit.</p>
         </div>
 
         <div className="space-y-3">
           {faqs.map((faq, i) => (
             <div
               key={i}
-              className="reveal bg-white rounded-xl border border-[#e8ddd0] overflow-hidden luxury-shadow group relative"
+              className="reveal bg-white rounded-xl border border-[#DDD0BC] overflow-hidden luxury-shadow group relative"
               style={{ transitionDelay: `${i * 0.05}s` }}
               data-testid={`faq-item-${i}`}
             >
@@ -888,14 +888,14 @@ function FAQSection() {
                 <ReptileScalePattern />
               </div>
               <button
-                className="w-full flex items-center justify-between gap-4 p-5 text-left hover:bg-[#faf8f3] transition-colors relative z-10"
+                className="w-full flex items-center justify-between gap-4 p-5 text-left hover:bg-[#FAF7F1] transition-colors relative z-10"
                 onClick={() => setOpen(open === i ? null : i)}
                 data-testid={`button-faq-${i}`}
                 aria-expanded={open === i}
               >
-                <span className="font-semibold text-[#2c1f0e] text-sm sm:text-base leading-snug">{faq.q}</span>
+                <span className="font-semibold text-[#241808] text-sm sm:text-base leading-snug">{faq.q}</span>
                 <ChevronDown
-                  className={`w-5 h-5 text-[#a0783a] flex-shrink-0 transition-transform duration-300 ${open === i ? "rotate-180" : ""}`}
+                  className={`w-5 h-5 text-[#9E6B28] flex-shrink-0 transition-transform duration-300 ${open === i ? "rotate-180" : ""}`}
                 />
               </button>
               <div
@@ -903,7 +903,7 @@ function FAQSection() {
                   open === i ? "max-h-60 opacity-100" : "max-h-0 opacity-0"
                 }`}
               >
-                <p className="px-5 pb-5 text-[#6b5740] text-sm leading-relaxed border-t border-[#f0e8de] pt-4">{faq.a}</p>
+                <p className="px-5 pb-5 text-[#52402E] text-sm leading-relaxed border-t border-[#E8D8C4] pt-4">{faq.a}</p>
               </div>
             </div>
           ))}
@@ -923,10 +923,10 @@ function ContactSection() {
   };
 
   return (
-    <section id="contact" className="relative py-20 sm:py-28 bg-[#2c1f0e] overflow-hidden">
+    <section id="contact" className="relative py-20 sm:py-28 bg-[#241808] overflow-hidden">
       <ReptileScalePattern />
       <AntigravityParticles count={14} />
-      <WindsurfWaves color="#c9944a" opacity={0.07} speed={0.5} />
+      <WindsurfWaves color="#B87A38" opacity={0.07} speed={0.5} />
 
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[700px] h-[350px] radiance-orb opacity-15"
@@ -939,14 +939,14 @@ function ContactSection() {
         <div className="text-center mb-14 reveal">
           <div className="flex items-center justify-center gap-3 mb-4">
             <div className="h-px w-10 aurora-bg rounded-full" style={{ height: "2px" }} />
-            <span className="text-[#c9944a] text-xs font-semibold tracking-[0.2em] uppercase">Visit Us</span>
+            <span className="text-[#B87A38] text-xs font-semibold tracking-[0.2em] uppercase">Visit Us</span>
             <div className="h-px w-10 aurora-bg rounded-full" style={{ height: "2px" }} />
           </div>
-          <h2 className="font-display text-4xl sm:text-5xl font-semibold text-[#fdf8f0] mb-4 leading-tight depth-zoom">
+          <h2 className="font-display text-4xl sm:text-5xl font-semibold text-[#F8EED6] mb-4 leading-tight depth-zoom">
             Book Your Dog's{" "}
             <em style={{ fontStyle: "italic" }} className="text-shimmer-gold">Grooming Session</em>
           </h2>
-          <p className="text-[#b5a090] text-lg max-w-xl mx-auto">Fill out the form below or give us a call. We'll get back to you within a few hours.</p>
+          <p className="text-[#A88C72] text-lg max-w-xl mx-auto">Fill out the form below or give us a call. We'll get back to you within a few hours.</p>
         </div>
 
         <div className="grid lg:grid-cols-5 gap-10 lg:gap-14 items-start">
@@ -955,18 +955,18 @@ function ContactSection() {
               <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
                 <ReptileScalePattern />
               </div>
-              <h3 className="font-display text-2xl font-semibold text-[#fdf8f0] mb-5 relative z-10">Get in Touch</h3>
+              <h3 className="font-display text-2xl font-semibold text-[#F8EED6] mb-5 relative z-10">Get in Touch</h3>
               <div className="space-y-5 relative z-10">
                 {[
-                  { icon: <Phone className="w-4 h-4 text-[#c9944a]" />, label: "Phone", content: <a href={PHONE_HREF} className="text-[#fdf8f0] font-medium hover:text-[#d4a96a] transition-colors text-lg" data-testid="link-phone-contact">{PHONE}</a> },
-                  { icon: <MapPin className="w-4 h-4 text-[#c9944a]" />, label: "Address", content: <><p className="text-[#d4c8bc] text-sm leading-snug">{ADDRESS}</p><a href="https://maps.google.com/?q=147+Newbury+St+Boston+MA" target="_blank" rel="noopener noreferrer" className="text-[#c9944a] text-xs font-medium mt-1.5 inline-flex items-center gap-1 hover:gap-2 transition-all" data-testid="link-directions">Get Directions <ChevronRight className="w-3 h-3" /></a></> },
+                  { icon: <Phone className="w-4 h-4 text-[#B87A38]" />, label: "Phone", content: <a href={PHONE_HREF} className="text-[#F8EED6] font-medium hover:text-[#D4A060] transition-colors text-lg" data-testid="link-phone-contact">{PHONE}</a> },
+                  { icon: <MapPin className="w-4 h-4 text-[#B87A38]" />, label: "Address", content: <><p className="text-[#C8AE90] text-sm leading-snug">{ADDRESS}</p><a href="https://maps.google.com/?q=147+Newbury+St+Boston+MA" target="_blank" rel="noopener noreferrer" className="text-[#B87A38] text-xs font-medium mt-1.5 inline-flex items-center gap-1 hover:gap-2 transition-all" data-testid="link-directions">Get Directions <ChevronRight className="w-3 h-3" /></a></> },
                   {
-                    icon: <Clock className="w-4 h-4 text-[#c9944a]" />, label: "Hours", content: (
+                    icon: <Clock className="w-4 h-4 text-[#B87A38]" />, label: "Hours", content: (
                       <div className="space-y-1.5">
                         {HOURS.map((h) => (
                           <div key={h.day} className="flex justify-between gap-4 text-sm" data-testid={`hours-${h.day.toLowerCase().replace(/\s+/g, "-")}`}>
-                            <span className="text-[#b5a090]">{h.day}</span>
-                            <span className="text-[#fdf8f0] font-medium">{h.time}</span>
+                            <span className="text-[#A88C72]">{h.day}</span>
+                            <span className="text-[#F8EED6] font-medium">{h.time}</span>
                           </div>
                         ))}
                       </div>
@@ -974,11 +974,11 @@ function ContactSection() {
                   },
                 ].map((item) => (
                   <div key={item.label} className="flex items-start gap-3.5">
-                    <div className="w-9 h-9 rounded-lg bg-[#a0783a]/20 flex items-center justify-center flex-shrink-0 mt-0.5 scale-pulse" style={{ animationDuration: "4s" }}>
+                    <div className="w-9 h-9 rounded-lg bg-[#9E6B28]/20 flex items-center justify-center flex-shrink-0 mt-0.5 scale-pulse" style={{ animationDuration: "4s" }}>
                       {item.icon}
                     </div>
                     <div>
-                      <p className="text-[#c9944a] text-xs font-semibold uppercase tracking-wider mb-1">{item.label}</p>
+                      <p className="text-[#B87A38] text-xs font-semibold uppercase tracking-wider mb-1">{item.label}</p>
                       {item.content}
                     </div>
                   </div>
@@ -1007,53 +1007,53 @@ function ContactSection() {
               </div>
               {submitted ? (
                 <div className="text-center py-12 relative z-10">
-                  <div className="w-16 h-16 bg-[#f5efe6] rounded-full flex items-center justify-center mx-auto mb-4 levitate">
-                    <CheckCircle2 className="w-8 h-8 text-[#a0783a]" />
+                  <div className="w-16 h-16 bg-[#F0E5D5] rounded-full flex items-center justify-center mx-auto mb-4 levitate">
+                    <CheckCircle2 className="w-8 h-8 text-[#9E6B28]" />
                   </div>
-                  <h3 className="font-display text-2xl font-semibold text-[#2c1f0e] mb-2">Request Received!</h3>
-                  <p className="text-[#6b5740] text-sm leading-relaxed max-w-xs mx-auto">
+                  <h3 className="font-display text-2xl font-semibold text-[#241808] mb-2">Request Received!</h3>
+                  <p className="text-[#52402E] text-sm leading-relaxed max-w-xs mx-auto">
                     Thank you! We'll reach out within a few hours to confirm. We can't wait to meet your pup.
                   </p>
                 </div>
               ) : (
                 <div className="relative z-10">
-                  <h3 className="font-display text-2xl font-semibold text-[#2c1f0e] mb-6">Request an Appointment</h3>
+                  <h3 className="font-display text-2xl font-semibold text-[#241808] mb-6">Request an Appointment</h3>
                   <form onSubmit={handleSubmit} className="space-y-4">
                     <div className="grid sm:grid-cols-2 gap-4">
                       <div>
-                        <label className="block text-xs font-semibold text-[#6b5740] uppercase tracking-wider mb-1.5">Your Name *</label>
-                        <input required type="text" value={formData.name} onChange={(e) => setFormData({ ...formData, name: e.target.value })} className="w-full px-4 py-3 rounded-xl border border-[#e8ddd0] bg-[#faf8f3] text-[#2c1f0e] text-sm placeholder-[#b5a090] focus:outline-none focus:border-[#a0783a] focus:ring-2 focus:ring-[#a0783a]/15 transition-all" placeholder="Jane Smith" data-testid="input-name" />
+                        <label className="block text-xs font-semibold text-[#52402E] uppercase tracking-wider mb-1.5">Your Name *</label>
+                        <input required type="text" value={formData.name} onChange={(e) => setFormData({ ...formData, name: e.target.value })} className="w-full px-4 py-3 rounded-xl border border-[#DDD0BC] bg-[#FAF7F1] text-[#241808] text-sm placeholder-[#A88C72] focus:outline-none focus:border-[#9E6B28] focus:ring-2 focus:ring-[#9E6B28]/15 transition-all" placeholder="Jane Smith" data-testid="input-name" />
                       </div>
                       <div>
-                        <label className="block text-xs font-semibold text-[#6b5740] uppercase tracking-wider mb-1.5">Email Address *</label>
-                        <input required type="email" value={formData.email} onChange={(e) => setFormData({ ...formData, email: e.target.value })} className="w-full px-4 py-3 rounded-xl border border-[#e8ddd0] bg-[#faf8f3] text-[#2c1f0e] text-sm placeholder-[#b5a090] focus:outline-none focus:border-[#a0783a] focus:ring-2 focus:ring-[#a0783a]/15 transition-all" placeholder="jane@email.com" data-testid="input-email" />
+                        <label className="block text-xs font-semibold text-[#52402E] uppercase tracking-wider mb-1.5">Email Address *</label>
+                        <input required type="email" value={formData.email} onChange={(e) => setFormData({ ...formData, email: e.target.value })} className="w-full px-4 py-3 rounded-xl border border-[#DDD0BC] bg-[#FAF7F1] text-[#241808] text-sm placeholder-[#A88C72] focus:outline-none focus:border-[#9E6B28] focus:ring-2 focus:ring-[#9E6B28]/15 transition-all" placeholder="jane@email.com" data-testid="input-email" />
                       </div>
                     </div>
                     <div className="grid sm:grid-cols-2 gap-4">
                       <div>
-                        <label className="block text-xs font-semibold text-[#6b5740] uppercase tracking-wider mb-1.5">Phone Number</label>
-                        <input type="tel" value={formData.phone} onChange={(e) => setFormData({ ...formData, phone: e.target.value })} className="w-full px-4 py-3 rounded-xl border border-[#e8ddd0] bg-[#faf8f3] text-[#2c1f0e] text-sm placeholder-[#b5a090] focus:outline-none focus:border-[#a0783a] focus:ring-2 focus:ring-[#a0783a]/15 transition-all" placeholder="(617) 555-0100" data-testid="input-phone" />
+                        <label className="block text-xs font-semibold text-[#52402E] uppercase tracking-wider mb-1.5">Phone Number</label>
+                        <input type="tel" value={formData.phone} onChange={(e) => setFormData({ ...formData, phone: e.target.value })} className="w-full px-4 py-3 rounded-xl border border-[#DDD0BC] bg-[#FAF7F1] text-[#241808] text-sm placeholder-[#A88C72] focus:outline-none focus:border-[#9E6B28] focus:ring-2 focus:ring-[#9E6B28]/15 transition-all" placeholder="(617) 555-0100" data-testid="input-phone" />
                       </div>
                       <div>
-                        <label className="block text-xs font-semibold text-[#6b5740] uppercase tracking-wider mb-1.5">Dog's Name & Breed *</label>
-                        <input required type="text" value={formData.dog} onChange={(e) => setFormData({ ...formData, dog: e.target.value })} className="w-full px-4 py-3 rounded-xl border border-[#e8ddd0] bg-[#faf8f3] text-[#2c1f0e] text-sm placeholder-[#b5a090] focus:outline-none focus:border-[#a0783a] focus:ring-2 focus:ring-[#a0783a]/15 transition-all" placeholder="Bella — Golden Retriever" data-testid="input-dog" />
+                        <label className="block text-xs font-semibold text-[#52402E] uppercase tracking-wider mb-1.5">Dog's Name & Breed *</label>
+                        <input required type="text" value={formData.dog} onChange={(e) => setFormData({ ...formData, dog: e.target.value })} className="w-full px-4 py-3 rounded-xl border border-[#DDD0BC] bg-[#FAF7F1] text-[#241808] text-sm placeholder-[#A88C72] focus:outline-none focus:border-[#9E6B28] focus:ring-2 focus:ring-[#9E6B28]/15 transition-all" placeholder="Bella — Golden Retriever" data-testid="input-dog" />
                       </div>
                     </div>
                     <div>
-                      <label className="block text-xs font-semibold text-[#6b5740] uppercase tracking-wider mb-1.5">Service Interested In</label>
-                      <select value={formData.service} onChange={(e) => setFormData({ ...formData, service: e.target.value })} className="w-full px-4 py-3 rounded-xl border border-[#e8ddd0] bg-[#faf8f3] text-[#2c1f0e] text-sm focus:outline-none focus:border-[#a0783a] focus:ring-2 focus:ring-[#a0783a]/15 transition-all appearance-none cursor-pointer" data-testid="select-service">
+                      <label className="block text-xs font-semibold text-[#52402E] uppercase tracking-wider mb-1.5">Service Interested In</label>
+                      <select value={formData.service} onChange={(e) => setFormData({ ...formData, service: e.target.value })} className="w-full px-4 py-3 rounded-xl border border-[#DDD0BC] bg-[#FAF7F1] text-[#241808] text-sm focus:outline-none focus:border-[#9E6B28] focus:ring-2 focus:ring-[#9E6B28]/15 transition-all appearance-none cursor-pointer" data-testid="select-service">
                         <option value="">Select a service...</option>
                         {services.map((s) => <option key={s.name} value={s.name}>{s.name}</option>)}
                       </select>
                     </div>
                     <div>
-                      <label className="block text-xs font-semibold text-[#6b5740] uppercase tracking-wider mb-1.5">Additional Notes</label>
-                      <textarea value={formData.message} onChange={(e) => setFormData({ ...formData, message: e.target.value })} rows={3} className="w-full px-4 py-3 rounded-xl border border-[#e8ddd0] bg-[#faf8f3] text-[#2c1f0e] text-sm placeholder-[#b5a090] focus:outline-none focus:border-[#a0783a] focus:ring-2 focus:ring-[#a0783a]/15 transition-all resize-none" placeholder="Any special requests, sensitivities, or preferred times..." data-testid="textarea-message" />
+                      <label className="block text-xs font-semibold text-[#52402E] uppercase tracking-wider mb-1.5">Additional Notes</label>
+                      <textarea value={formData.message} onChange={(e) => setFormData({ ...formData, message: e.target.value })} rows={3} className="w-full px-4 py-3 rounded-xl border border-[#DDD0BC] bg-[#FAF7F1] text-[#241808] text-sm placeholder-[#A88C72] focus:outline-none focus:border-[#9E6B28] focus:ring-2 focus:ring-[#9E6B28]/15 transition-all resize-none" placeholder="Any special requests, sensitivities, or preferred times..." data-testid="textarea-message" />
                     </div>
                     <button type="submit" className="cta-button-primary w-full flex items-center justify-center gap-2.5 py-4 rounded-xl text-base font-semibold neon-bronze" data-testid="button-submit-form">
                       <Calendar className="w-5 h-5" />Request Appointment
                     </button>
-                    <p className="text-center text-[#9b8470] text-xs">Or call <a href={PHONE_HREF} className="text-[#a0783a] font-medium hover:underline" data-testid="link-phone-form">{PHONE}</a></p>
+                    <p className="text-center text-[#7A6452] text-xs">Or call <a href={PHONE_HREF} className="text-[#9E6B28] font-medium hover:underline" data-testid="link-phone-form">{PHONE}</a></p>
                   </form>
                 </div>
               )}
@@ -1067,29 +1067,29 @@ function ContactSection() {
 
 function Footer() {
   return (
-    <footer className="relative bg-[#1a1008] border-t border-white/10 overflow-hidden">
+    <footer className="relative bg-[#160E06] border-t border-white/10 overflow-hidden">
       <ReptileScalePattern />
-      <WindsurfWaves color="#c9944a" opacity={0.05} speed={0.3} />
+      <WindsurfWaves color="#B87A38" opacity={0.05} speed={0.3} />
 
       <div className="relative z-10 max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
         <div className="py-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-12">
           <div className="sm:col-span-2 lg:col-span-1">
             <a href="#" className="flex items-center gap-2.5 mb-4" data-testid="link-footer-logo">
-              <div className="w-9 h-9 rounded-full bg-[#a0783a] flex items-center justify-center scale-pulse">
+              <div className="w-9 h-9 rounded-full bg-[#9E6B28] flex items-center justify-center scale-pulse">
                 <Scissors className="w-4 h-4 text-white" />
               </div>
               <div>
-                <span className="font-display text-xl font-semibold text-[#fdf8f0] block leading-none">Alpha Dogs</span>
-                <span className="text-[10px] font-medium text-[#c9944a] tracking-[0.15em] uppercase block mt-0.5">Boston</span>
+                <span className="font-display text-xl font-semibold text-[#F8EED6] block leading-none">Alpha Dogs</span>
+                <span className="text-[10px] font-medium text-[#B87A38] tracking-[0.15em] uppercase block mt-0.5">Boston</span>
               </div>
             </a>
-            <p className="text-[#8b7660] text-sm leading-relaxed mb-5 max-w-xs">Boston's premier boutique dog grooming studio. Expert care, premium products, and genuine love for every dog.</p>
+            <p className="text-[#7A6450] text-sm leading-relaxed mb-5 max-w-xs">Boston's premier boutique dog grooming studio. Expert care, premium products, and genuine love for every dog.</p>
             <div className="flex gap-3">
               {[
                 { href: "https://instagram.com", icon: <Instagram className="w-4 h-4" />, label: "Instagram", testid: "link-instagram-footer" },
                 { href: "https://facebook.com", icon: <Facebook className="w-4 h-4" />, label: "Facebook", testid: "link-facebook-footer" },
               ].map((s) => (
-                <a key={s.label} href={s.href} target="_blank" rel="noopener noreferrer" className="w-9 h-9 rounded-full bg-white/5 hover:bg-[#a0783a]/30 flex items-center justify-center text-[#b5a090] hover:text-[#c9944a] transition-all antigravity-float" style={{ animationDuration: "5s" }} aria-label={s.label} data-testid={s.testid}>
+                <a key={s.label} href={s.href} target="_blank" rel="noopener noreferrer" className="w-9 h-9 rounded-full bg-white/5 hover:bg-[#9E6B28]/30 flex items-center justify-center text-[#A88C72] hover:text-[#B87A38] transition-all antigravity-float" style={{ animationDuration: "5s" }} aria-label={s.label} data-testid={s.testid}>
                   {s.icon}
                 </a>
               ))}
@@ -1097,11 +1097,11 @@ function Footer() {
           </div>
 
           <div>
-            <h4 className="text-[#fdf8f0] font-semibold text-sm uppercase tracking-wider mb-4">Services</h4>
+            <h4 className="text-[#F8EED6] font-semibold text-sm uppercase tracking-wider mb-4">Services</h4>
             <ul className="space-y-2.5">
               {services.map((s) => (
                 <li key={s.name}>
-                  <a href="#services" className="text-[#8b7660] hover:text-[#c9944a] text-sm transition-colors underline-wave" data-testid={`link-footer-service-${s.name.toLowerCase().replace(/\s+/g, "-")}`}>
+                  <a href="#services" className="text-[#7A6450] hover:text-[#B87A38] text-sm transition-colors underline-wave" data-testid={`link-footer-service-${s.name.toLowerCase().replace(/\s+/g, "-")}`}>
                     {s.name}
                   </a>
                 </li>
@@ -1110,7 +1110,7 @@ function Footer() {
           </div>
 
           <div>
-            <h4 className="text-[#fdf8f0] font-semibold text-sm uppercase tracking-wider mb-4">Navigate</h4>
+            <h4 className="text-[#F8EED6] font-semibold text-sm uppercase tracking-wider mb-4">Navigate</h4>
             <ul className="space-y-2.5">
               {[
                 { label: "Home", href: "#" },
@@ -1121,7 +1121,7 @@ function Footer() {
                 { label: "Contact", href: "#contact" },
               ].map((l) => (
                 <li key={l.label}>
-                  <a href={l.href} className="text-[#8b7660] hover:text-[#c9944a] text-sm transition-colors underline-wave" data-testid={`link-footer-nav-${l.label.toLowerCase().replace(/\s+/g, "-")}`}>
+                  <a href={l.href} className="text-[#7A6450] hover:text-[#B87A38] text-sm transition-colors underline-wave" data-testid={`link-footer-nav-${l.label.toLowerCase().replace(/\s+/g, "-")}`}>
                     {l.label}
                   </a>
                 </li>
@@ -1130,17 +1130,17 @@ function Footer() {
           </div>
 
           <div>
-            <h4 className="text-[#fdf8f0] font-semibold text-sm uppercase tracking-wider mb-4">Contact</h4>
+            <h4 className="text-[#F8EED6] font-semibold text-sm uppercase tracking-wider mb-4">Contact</h4>
             <div className="space-y-3 mb-6">
-              <a href={PHONE_HREF} className="flex items-center gap-2.5 text-[#8b7660] hover:text-[#c9944a] transition-colors text-sm" data-testid="link-footer-phone">
-                <Phone className="w-4 h-4 text-[#c9944a]" />{PHONE}
+              <a href={PHONE_HREF} className="flex items-center gap-2.5 text-[#7A6450] hover:text-[#B87A38] transition-colors text-sm" data-testid="link-footer-phone">
+                <Phone className="w-4 h-4 text-[#B87A38]" />{PHONE}
               </a>
-              <div className="flex items-start gap-2.5 text-[#8b7660] text-sm">
-                <MapPin className="w-4 h-4 text-[#c9944a] flex-shrink-0 mt-0.5" />
+              <div className="flex items-start gap-2.5 text-[#7A6450] text-sm">
+                <MapPin className="w-4 h-4 text-[#B87A38] flex-shrink-0 mt-0.5" />
                 <span>{ADDRESS}</span>
               </div>
-              <div className="flex items-start gap-2.5 text-[#8b7660] text-sm">
-                <Clock className="w-4 h-4 text-[#c9944a] flex-shrink-0 mt-0.5" />
+              <div className="flex items-start gap-2.5 text-[#7A6450] text-sm">
+                <Clock className="w-4 h-4 text-[#B87A38] flex-shrink-0 mt-0.5" />
                 <span>Mon–Fri: 8am–7pm<br />Sat: 8am–6pm<br />Sun: 10am–4pm</span>
               </div>
             </div>
@@ -1151,8 +1151,8 @@ function Footer() {
         </div>
 
         <div className="py-5 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-3">
-          <p className="text-[#6b5740] text-xs">© {new Date().getFullYear()} Alpha Dogs Boston. All rights reserved.</p>
-          <p className="text-[#6b5740] text-xs">147 Newbury St, Boston, MA · Professional Dog Grooming</p>
+          <p className="text-[#52402E] text-xs">© {new Date().getFullYear()} Alpha Dogs Boston. All rights reserved.</p>
+          <p className="text-[#52402E] text-xs">147 Newbury St, Boston, MA · Professional Dog Grooming</p>
         </div>
       </div>
     </footer>
@@ -1164,7 +1164,7 @@ export default function Home() {
   const scrollProgress = useScrollProgress();
 
   return (
-    <div className="min-h-screen bg-[#faf8f3]">
+    <div className="min-h-screen bg-[#FAF7F1]">
       <div
         className="progress-bar"
         style={{ transform: `scaleX(${scrollProgress / 100})` }}
