@@ -124,36 +124,39 @@ function Navbar() {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-700 glass-nav ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 glass-nav ${
         scrolled
-          ? "bg-[#FAF7F1]/94 border-b border-[#DDD0BC] luxury-shadow"
-          : "bg-transparent"
+          ? "bg-white/95 border-b border-[#DDD0BC] shadow-[0_2px_20px_rgba(45,30,14,0.10)]"
+          : "bg-gradient-to-b from-[#1A0E06]/60 to-transparent"
       }`}
     >
-      {scrolled && (
-        <div className="absolute bottom-0 left-0 right-0 h-px overflow-hidden">
-          <div className="wind-trail-1" style={{ top: 0, height: "1px", animation: "windsurf-wave 4s ease-in-out infinite" }} />
-        </div>
-      )}
       <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
         <div className="flex items-center justify-between h-16 sm:h-20">
-          <a href="#" className="flex items-center gap-2.5 group" data-testid="link-logo">
-            <div className="w-9 h-9 rounded-full bg-[#9E6B28] flex items-center justify-center scale-pulse">
+          <a
+            href="#"
+            className={`flex items-center gap-2.5 group transition-colors duration-300 ${scrolled ? "text-[#241808]" : "text-white"}`}
+            data-testid="link-logo"
+          >
+            <div className="w-9 h-9 rounded-full bg-[#9E6B28] flex items-center justify-center shadow-[0_2px_10px_rgba(158,107,40,0.35)]">
               <Scissors className="w-4 h-4 text-white" />
             </div>
             <div>
-              <span className="font-display text-xl font-semibold text-[#241808] tracking-wide block leading-none">Alpha Dogs</span>
-              <span className="text-[10px] font-medium text-[#9E6B28] tracking-[0.15em] uppercase block mt-0.5">Boston</span>
+              <span className="font-display text-xl font-semibold tracking-wide block leading-none">
+                Alpha Dogs
+              </span>
+              <span className={`text-[10px] font-semibold tracking-[0.18em] uppercase block mt-0.5 ${scrolled ? "text-[#9E6B28]" : "text-[#C4884A]"}`}>Boston</span>
             </div>
           </a>
 
-          <div className="hidden md:flex items-center gap-8">
+          <div className="hidden md:flex items-center gap-7">
             {links.map((l) => (
               <a
                 key={l.label}
                 href={l.href}
-                className={`text-sm font-medium tracking-wide transition-all duration-200 underline-wave relative ${
-                  scrolled ? "text-[#2E1E0E] hover:text-[#9E6B28]" : "text-[#241808] hover:text-[#9E6B28]"
+                className={`text-sm font-semibold tracking-wide transition-all duration-200 relative underline-wave ${
+                  scrolled
+                    ? "text-[#241808] hover:text-[#9E6B28]"
+                    : "text-white/90 hover:text-[#D4A060]"
                 }`}
                 data-testid={`link-nav-${l.label.toLowerCase()}`}
               >
@@ -165,8 +168,11 @@ function Navbar() {
           <div className="hidden md:flex items-center gap-3">
             <a
               href={PHONE_HREF}
-              className="cta-button-outline flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium windsurf-blow"
-              style={{ animationDuration: "8s" }}
+              className={`flex items-center gap-2 px-4 py-2 rounded-full text-sm font-semibold border transition-all duration-200 ${
+                scrolled
+                  ? "border-[#9E6B28] text-[#9E6B28] hover:bg-[#9E6B28] hover:text-white"
+                  : "border-white/60 text-white hover:bg-white/15 hover:border-white"
+              }`}
               data-testid="button-call-nav"
             >
               <Phone className="w-3.5 h-3.5" />
@@ -183,7 +189,7 @@ function Navbar() {
           </div>
 
           <button
-            className="md:hidden p-2 rounded-lg text-[#241808]"
+            className={`md:hidden p-2 rounded-lg transition-colors ${scrolled ? "text-[#241808]" : "text-white"}`}
             onClick={() => setMenuOpen(!menuOpen)}
             data-testid="button-mobile-menu"
           >
@@ -193,21 +199,21 @@ function Navbar() {
       </div>
 
       {menuOpen && (
-        <div className="md:hidden bg-[#FAF7F1]/98 glass-nav border-t border-[#DDD0BC] mobile-menu-slide">
-          <div className="px-5 py-6 space-y-4">
+        <div className="md:hidden bg-white border-t border-[#DDD0BC] shadow-lg mobile-menu-slide">
+          <div className="px-5 py-6 space-y-1">
             {links.map((l) => (
               <a
                 key={l.label}
                 href={l.href}
-                className="block text-base font-medium text-[#2E1E0E] hover:text-[#9E6B28] transition-colors py-1"
+                className="flex items-center text-base font-semibold text-[#241808] hover:text-[#9E6B28] hover:bg-[#F0E5D5] transition-colors py-3 px-3 rounded-lg"
                 onClick={() => setMenuOpen(false)}
                 data-testid={`link-mobile-${l.label.toLowerCase()}`}
               >
                 {l.label}
               </a>
             ))}
-            <div className="pt-4 border-t border-[#DDD0BC] flex flex-col gap-3">
-              <a href={PHONE_HREF} className="cta-button-outline flex items-center justify-center gap-2 py-3 rounded-full text-sm font-medium" data-testid="button-call-mobile">
+            <div className="pt-4 border-t border-[#DDD0BC] flex flex-col gap-3 mt-2">
+              <a href={PHONE_HREF} className="flex items-center justify-center gap-2 py-3 rounded-full text-sm font-semibold border-2 border-[#9E6B28] text-[#9E6B28] hover:bg-[#9E6B28] hover:text-white transition-all duration-200" data-testid="button-call-mobile">
                 <Phone className="w-4 h-4" />{PHONE}
               </a>
               <a href={BOOKING_URL} className="cta-button-primary flex items-center justify-center gap-2 py-3 rounded-full text-sm font-semibold" data-testid="button-book-mobile">
@@ -354,7 +360,7 @@ function TrustBadges() {
       <div className="absolute inset-0 pointer-events-none">
         <div
           className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] rounded-full radiance-orb opacity-20"
-          style={{ background: "radial-gradient(ellipse, rgba(201,148,74,0.3) 0%, transparent 70%)" }}
+          style={{ background: "radial-gradient(ellipse, rgba(184,122,56,0.3) 0%, transparent 70%)" }}
         />
       </div>
 
@@ -509,7 +515,7 @@ function WhyChooseUs() {
       <WindsurfWaves color="#A87840" opacity={0.07} speed={0.35} />
 
       <div className="absolute -top-20 -left-20 w-80 h-80 rounded-full radiance-orb opacity-30 pointer-events-none"
-        style={{ background: "radial-gradient(circle, rgba(201,148,74,0.2) 0%, transparent 70%)" }} />
+        style={{ background: "radial-gradient(circle, rgba(184,122,56,0.2) 0%, transparent 70%)" }} />
 
       <div className="relative z-10 max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
         <div className="grid lg:grid-cols-2 gap-14 lg:gap-20 items-center">
@@ -576,7 +582,7 @@ function GallerySection() {
 
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] radiance-orb opacity-15"
-          style={{ background: "radial-gradient(ellipse, rgba(201,148,74,0.25) 0%, transparent 70%)" }} />
+          style={{ background: "radial-gradient(ellipse, rgba(184,122,56,0.25) 0%, transparent 70%)" }} />
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
@@ -930,7 +936,7 @@ function ContactSection() {
 
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[700px] h-[350px] radiance-orb opacity-15"
-          style={{ background: "radial-gradient(ellipse, rgba(201,148,74,0.2) 0%, transparent 70%)" }} />
+          style={{ background: "radial-gradient(ellipse, rgba(184,122,56,0.2) 0%, transparent 70%)" }} />
       </div>
 
       <SerpentineLine className="absolute top-0 left-0 right-0 h-14 z-10" />
@@ -1083,7 +1089,7 @@ function Footer() {
                 <span className="text-[10px] font-medium text-[#B87A38] tracking-[0.15em] uppercase block mt-0.5">Boston</span>
               </div>
             </a>
-            <p className="text-[#7A6450] text-sm leading-relaxed mb-5 max-w-xs">Boston's premier boutique dog grooming studio. Expert care, premium products, and genuine love for every dog.</p>
+            <p className="text-[#A08872] text-sm leading-relaxed mb-5 max-w-xs">Boston's premier boutique dog grooming studio. Expert care, premium products, and genuine love for every dog.</p>
             <div className="flex gap-3">
               {[
                 { href: "https://instagram.com", icon: <Instagram className="w-4 h-4" />, label: "Instagram", testid: "link-instagram-footer" },
@@ -1101,7 +1107,7 @@ function Footer() {
             <ul className="space-y-2.5">
               {services.map((s) => (
                 <li key={s.name}>
-                  <a href="#services" className="text-[#7A6450] hover:text-[#B87A38] text-sm transition-colors underline-wave" data-testid={`link-footer-service-${s.name.toLowerCase().replace(/\s+/g, "-")}`}>
+                  <a href="#services" className="text-[#A08872] hover:text-[#D4A060] text-sm transition-colors underline-wave" data-testid={`link-footer-service-${s.name.toLowerCase().replace(/\s+/g, "-")}`}>
                     {s.name}
                   </a>
                 </li>
@@ -1121,7 +1127,7 @@ function Footer() {
                 { label: "Contact", href: "#contact" },
               ].map((l) => (
                 <li key={l.label}>
-                  <a href={l.href} className="text-[#7A6450] hover:text-[#B87A38] text-sm transition-colors underline-wave" data-testid={`link-footer-nav-${l.label.toLowerCase().replace(/\s+/g, "-")}`}>
+                  <a href={l.href} className="text-[#A08872] hover:text-[#D4A060] text-sm transition-colors underline-wave" data-testid={`link-footer-nav-${l.label.toLowerCase().replace(/\s+/g, "-")}`}>
                     {l.label}
                   </a>
                 </li>
@@ -1132,15 +1138,15 @@ function Footer() {
           <div>
             <h4 className="text-[#F8EED6] font-semibold text-sm uppercase tracking-wider mb-4">Contact</h4>
             <div className="space-y-3 mb-6">
-              <a href={PHONE_HREF} className="flex items-center gap-2.5 text-[#7A6450] hover:text-[#B87A38] transition-colors text-sm" data-testid="link-footer-phone">
-                <Phone className="w-4 h-4 text-[#B87A38]" />{PHONE}
+              <a href={PHONE_HREF} className="flex items-center gap-2.5 text-[#A08872] hover:text-[#D4A060] transition-colors text-sm" data-testid="link-footer-phone">
+                <Phone className="w-4 h-4 text-[#C4884A]" />{PHONE}
               </a>
-              <div className="flex items-start gap-2.5 text-[#7A6450] text-sm">
-                <MapPin className="w-4 h-4 text-[#B87A38] flex-shrink-0 mt-0.5" />
+              <div className="flex items-start gap-2.5 text-[#A08872] text-sm">
+                <MapPin className="w-4 h-4 text-[#C4884A] flex-shrink-0 mt-0.5" />
                 <span>{ADDRESS}</span>
               </div>
-              <div className="flex items-start gap-2.5 text-[#7A6450] text-sm">
-                <Clock className="w-4 h-4 text-[#B87A38] flex-shrink-0 mt-0.5" />
+              <div className="flex items-start gap-2.5 text-[#A08872] text-sm">
+                <Clock className="w-4 h-4 text-[#C4884A] flex-shrink-0 mt-0.5" />
                 <span>Mon–Fri: 8am–7pm<br />Sat: 8am–6pm<br />Sun: 10am–4pm</span>
               </div>
             </div>
@@ -1151,8 +1157,8 @@ function Footer() {
         </div>
 
         <div className="py-5 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-3">
-          <p className="text-[#52402E] text-xs">© {new Date().getFullYear()} Alpha Dogs Boston. All rights reserved.</p>
-          <p className="text-[#52402E] text-xs">147 Newbury St, Boston, MA · Professional Dog Grooming</p>
+          <p className="text-[#7A6858] text-xs">© {new Date().getFullYear()} Alpha Dogs Boston. All rights reserved.</p>
+          <p className="text-[#7A6858] text-xs">147 Newbury St, Boston, MA · Professional Dog Grooming</p>
         </div>
       </div>
     </footer>
