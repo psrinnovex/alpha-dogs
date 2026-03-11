@@ -14,6 +14,8 @@ const PHONE = "(617) 555-0192";
 const PHONE_HREF = "tel:+16175550192";
 const BOOKING_URL = "#contact";
 const ADDRESS = "147 Newbury St, Suite 2, Boston, MA 02116";
+const assetPath = (path: string) =>
+  `${import.meta.env.BASE_URL}${path.replace(/^\//, "")}`;
 const HOURS = [
   { day: "Monday – Friday", time: "8:00 AM – 7:00 PM" },
   { day: "Saturday", time: "8:00 AM – 6:00 PM" },
@@ -235,7 +237,7 @@ function HeroSection() {
       <div className="absolute inset-0 z-0">
         <div className="hero-ken-burns absolute inset-0">
           <img
-            src="/images/hero-dog.png"
+            src={assetPath("/images/hero-dog.png")}
             alt="Professionally groomed dog at Alpha Dogs Boston"
             className="w-full h-full object-cover"
             loading="eager"
@@ -566,12 +568,12 @@ function WhyChooseUs() {
 
 function GallerySection() {
   const images = [
-    { src: "/images/dog-gallery-1.png", alt: "Groomed fluffy white poodle" },
-    { src: "/images/dog-gallery-2.png", alt: "Golden retriever being groomed" },
-    { src: "/images/dog-gallery-3.png", alt: "Adorable small dog after groom" },
-    { src: "/images/dog-gallery-4.png", alt: "Border collie in grooming studio" },
-    { src: "/images/dog-gallery-5.png", alt: "Beautiful samoyed after grooming" },
-    { src: "/images/hero-dog.png", alt: "Premium groomed dog at studio" },
+    { src: assetPath("/images/dog-gallery-1.png"), alt: "Groomed fluffy white poodle" },
+    { src: assetPath("/images/dog-gallery-2.png"), alt: "Golden retriever being groomed" },
+    { src: assetPath("/images/dog-gallery-3.png"), alt: "Adorable small dog after groom" },
+    { src: assetPath("/images/dog-gallery-4.png"), alt: "Border collie in grooming studio" },
+    { src: assetPath("/images/dog-gallery-5.png"), alt: "Beautiful samoyed after grooming" },
+    { src: assetPath("/images/hero-dog.png"), alt: "Premium groomed dog at studio" },
   ];
 
   return (
@@ -733,7 +735,7 @@ function CTABand() {
     <section className="relative py-20 overflow-hidden">
       <div
         className="absolute inset-0 parallax-section"
-        style={{ backgroundImage: "url('/images/dog-gallery-2.png')", backgroundSize: "cover", backgroundPosition: "center" }}
+        style={{ backgroundImage: `url('${assetPath("/images/dog-gallery-2.png")}')`, backgroundSize: "cover", backgroundPosition: "center" }}
       />
       <div className="absolute inset-0 bg-[#1A0E06]/82" />
       <ReptileScalePattern />
@@ -801,7 +803,7 @@ function AboutSection() {
             <div className="relative">
               <div className="aspect-[4/3] rounded-2xl overflow-hidden luxury-shadow-lg group">
                 <img
-                  src="/images/about-groomer.png"
+                  src={assetPath("/images/about-groomer.png")}
                   alt="Alpha Dogs Boston professional groomer"
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                   loading="lazy"
